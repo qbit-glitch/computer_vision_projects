@@ -117,3 +117,18 @@ IoU = Area Of Intersection / Area of Union      -> [0,1]
 ![](./notes_ss/iou3.png)
 
 ![](./notes_ss/iou_formula.png)
+
+<!-- end_slide -->
+
+Non-Max Suppression Algorithm
+===
+
+Perhaps start with discarding all bounding boxes < `probaility threshold`.
+
+While BoundingBoxes:
+- take out the largest probability box
+- Remove all other boxes with IoU > threshold 
+
+(And we do this for each class)
+
+![](./notes_ss/nms.png)
