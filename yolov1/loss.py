@@ -65,8 +65,8 @@ class YoloLoss(nn.Module):
 
         """ FOR CLASS LOSS """
         class_loss = self.mse(
-            torch.flatten(exists_box * predictions[..., :20], end_dim = -1),
-            torch.flatten(exists_box * target[..., :20], end_dim = -2),
+            torch.flatten(exists_box * predictions[..., :20], start_dim = 1),
+            torch.flatten(exists_box * target[..., :20], start_dim = 1),
         )
 
         loss = (
@@ -75,3 +75,5 @@ class YoloLoss(nn.Module):
             + self.lambda_noobj * no_object_loss
             + class_loss
         )
+        return loss
+        
