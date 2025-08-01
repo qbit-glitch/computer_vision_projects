@@ -132,3 +132,46 @@ While BoundingBoxes:
 (And we do this for each class)
 
 ![](./notes_ss/nms.png)
+
+<!-- end_slide -->
+
+Mean Average Precision
+===
+Goal is to understand and implement the most common metric used in Deep Learning to evaluate object detection models.
+
+Concretely after this video, if we read `"mAP@0.5:0.05:0.95"` in a research paper, we should know exactly what that means, and know how to do that evaluation on our own model.
+
+Steps:
+1. Get all the bounding box predictions on our test set.
+2. Sort by descending confidence score.
+3. Calculate the Precision and Recall as we go through all outputs.
+4. Plot the Precision-Recall graph.
+5. Calculate area under the Precision Recall Curve.
+6. This was only for one class, we need to calculate for all classes. 
+
+
+![](./notes_ss/mAP.png)
+
+<!-- end_slide -->
+
+![](./notes_ss/mAP2.png)
+![](./notes_ss/mAP3.png)
+![](./notes_ss/mAP4.png)
+
+<!-- end_slide -->
+
+Precision and Recall
+===
+
+![](./notes_ss/precision_recall.png)
+There's a battle between precision and recall! Different applications may prioritize recall and others precision.
+
+<!-- end_slide -->
+
+- Cat AP = 0.74
+- Dog AP = 0.533
+
+mAP = (0.533 + 0.74)/2 = 0.6365
+
+7. All of this was calculates given a specific IoU threshold of 0.5, 0.55, 0.6, ... , 0.95. Then average this and this will be our final result. This is what is meant by `mAP@0.5:0.05:0.95` 
+ 
