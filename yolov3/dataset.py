@@ -74,7 +74,8 @@ class YOLODataset(Dataset):
                     )
                     targets[scale_idx][anchor_on_scale, i, j, 1:5] = box_coordinates
                     targets[scale_idx][anchor_on_scale, i, j, 5] = int(class_label)
-                
+                    has_anchor[scale_idx] = True
+
                 elif not anchor_taken and iou_anchors[anchor_idx] > self.ignore_iou_thresh:
                     targets[scale_idx][anchor_on_scale, i, j, 0] = -1      # ignore this prediction
 
