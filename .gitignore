@@ -4,3 +4,6 @@ ven2_cv
 .env
 yolov1/__pycache__
 
+license_plate_recognition/
+u-net/
+ultralytics_notebooks/
