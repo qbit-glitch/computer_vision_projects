@@ -6,4 +6,26 @@ yolov1/__pycache__
 
 license_plate_recognition/
 u-net/
-ultralytics_notebooks/
+
+license_plate_dataset/
+mnit_parking_dataset/
+lane_weights/
+predicted_bounding_boxes/
+roads/
+sample*/
+*.zip
+*.pt
+*.jpg
+*.mp4
+*.avi
+testing_images/
+*.webm
+*.mov
+*.png
+
+crack-seg/
+*.zip
+
+carpets-seg/
+
+brain-tumor/
